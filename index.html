@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+	<style type="text/css">
+		body{
+			background: url("https://wallpaperaccess.com/full/3283117.jpg") fixed no-repeat;
+			background-size: cover;
+			text-align: center;
+		}
+		.list-type{
+			list-style: none;
+		}
+		.listitems{
+			font-size: 3rem;
+		}
+		#newTodo{
+			background-color: white;
+			color: black;
+			margin:20% 10% 0% 5%;
+			border-radius: 2px;
+			border-style: none;
+		}
+		.btn{
+			color: white;
+			margin: 1% 10% 10% 5%;
+			border-radius: 2px;
+			background-color: lightslategray;
+			border-style: none;
+		}
+	</style>
+	<script src="https://kit.fontawesome.com/ea6d4fec5e.js"crossorigin="anonymous"></script>
+	<script type="text/javascript">
+		
+		function todo(){
+			let newTodo=document.getElementById("newTodo").value
+			document.getElementById("newTodo").value=""
+			
+			addTodo(newTodo)
+		}
+		function addTodo(newValue){
+			let ul=document.querySelector("ul")
+			console.log(ul)
+			let li=document.createElement("li")
+			li.innerHTML=`
+			<span class="listitem">${newValue}</span>
+			<i class="fa-solid
+			fa-rectangle-xmark"</i>
+			`
+			li.classList.add("list-type")
+			ul.appendChild(li)
+		}
+	</script>
+</head>
+<body>
+	<section class="sec">
+	
+
+	<input id="newTodo"placeholder="Enter your message"/>
+	<ul>
+		
+	</ul>
+	
+	<button class="btn"onclick="todo()">send</button>
+	</section>
+
+
+</body>
+</html>
